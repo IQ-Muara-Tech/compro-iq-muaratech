@@ -163,11 +163,11 @@ function submitSendMessage() {
           <div class="w-full self-center px-4 lg:w-1/2">
             <h1
               v-scroll-animate="'animate-fade-up'"
-              class="text-base font-semibold text-primary md:text-xl"
+              class="text-base font-semibold text-slate-900 md:text-xl"
             >
               Selamat Datang 👋🏻, di
               <span
-                class="block font-bold text-slate-900 text-4xl mt-1 lg:text-5xl"
+                class="block font-bold text-primary text-4xl mt-1 lg:text-5xl"
                 >IQ Muara Technology</span
               >
             </h1>
@@ -181,10 +181,10 @@ function submitSendMessage() {
               v-scroll-animate="'animate-fade-up'"
               class="font-medium text-slate-400 mb-10 leading-relaxed"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ut
-              eaque eos sed voluptates atque repellendus, cumque tempore neque
-              quam, recusandae, veniam reiciendis quia voluptatibus porro.
-              Temporibus modi adipisci quisquam.
+              Kami berfokus pada layanan pembuatan website, aplikasi, dan desain
+              grafis untuk berbagai kebutuhan digital. Dengan solusi inovatif
+              dan tim kreatif yang berpengalaman, kami membantu mewujudkan ide
+              anda menjadi produk teknologi yang fungsional dan menarik
             </p>
             <div class="mt-10">
               <a href="#contact" type="button">
@@ -238,18 +238,19 @@ function submitSendMessage() {
               v-scroll-animate="'animate-fade-up'"
               class="font-semibold uppercase text-sm text-primary mb-3 text-center"
             >
-              Services
+              Layanan kami
             </h4>
             <h2
               v-scroll-animate="'animate-fade-up'"
               class="mb-20 font-bold text-2xl font-sans text-center text-slate-800"
             >
-              It Industries We’re <span class="text-primary">Offering</span>
+              Industri IT yang kami <span class="text-primary">Tawarkan</span>
             </h2>
             <div
               v-scroll-animate="'animate-fade-up'"
               class="grid lg:grid-cols-3 md:grid-cols-1 gap-0"
             >
+              <!-- Web Development -->
               <div
                 class="rounded-2xl flex justify-start items-start p-5 hover:shadow-md hover:-translate-y-2 hover:scale-105 hover:border hover:border-primary transition duration-500"
               >
@@ -258,35 +259,6 @@ function submitSendMessage() {
                     class="2xl:text-[50px] lg:text-[40px] text-[35px] font-bold text-primary 2xl:w-[60px] xl:w-[60px] lg:w-[50px] w-[40px] opacity-50"
                   >
                     01
-                  </h6>
-                </div>
-                <div class="pl-6 border-l border-l-slate-200">
-                  <div class="flex">
-                    <img
-                      src="/src/assets/images/graphics-design.png"
-                      alt="service-1"
-                      width="50"
-                    />
-                  </div>
-                  <h4 class="text-[20px] pt-6 font-bold text-slate-800">
-                    Graphics design
-                  </h4>
-                  <p class="pt-2 text-slate-500 text-[15px] leading-[28px]">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Libero nam ullam ipsa perspiciatis esse natus cum itaque hic
-                    commodi. Veritatis temporibus aut, maxime iure itaque fuga
-                    laborum tenetur doloribus laudantium.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="rounded-2xl flex justify-start items-start p-5 hover:shadow-md hover:-translate-y-2 hover:scale-105 hover:border hover:border-primary transition duration-500"
-              >
-                <div class="pr-6 border-r border-primary max-[480px]:hidden">
-                  <h6
-                    class="2xl:text-[50px] lg:text-[40px] text-[35px] font-bold text-primary 2xl:w-[60px] xl:w-[60px] lg:w-[50px] w-[40px] opacity-50"
-                  >
-                    02
                   </h6>
                 </div>
                 <div class="pl-6 border-l border-l-slate-200">
@@ -301,13 +273,15 @@ function submitSendMessage() {
                     Web Development
                   </h4>
                   <p class="pt-2 text-slate-500 text-[15px] leading-[28px]">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Libero nam ullam ipsa perspiciatis esse natus cum itaque hic
-                    commodi. Veritatis temporibus aut, maxime iure itaque fuga
-                    laborum tenetur doloribus laudantium.
+                    Kami membangun website yang bukan hanya menarik dilihat,
+                    tapi juga cepat, responsif, dan mudah digunakan. Dari
+                    Company Profile hingga Sistem Berbasis Web, kami bantu
+                    wujudkan platform digital yang siap mendukung perkembangan
+                    bisnismu.
                   </p>
                 </div>
               </div>
+              <!-- Mobile Development -->
               <div
                 class="rounded-2xl flex justify-start items-start p-5 hover:shadow-md hover:-translate-y-2 hover:scale-105 hover:border hover:border-primary transition duration-500"
               >
@@ -315,7 +289,7 @@ function submitSendMessage() {
                   <h6
                     class="2xl:text-[50px] lg:text-[40px] text-[35px] font-bold text-primary 2xl:w-[60px] xl:w-[60px] lg:w-[50px] w-[40px] opacity-50"
                   >
-                    03
+                    02
                   </h6>
                 </div>
                 <div class="pl-6 border-l border-l-slate-200">
@@ -330,10 +304,41 @@ function submitSendMessage() {
                     Mobile Development
                   </h4>
                   <p class="pt-2 text-slate-500 text-[15px] leading-[28px]">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Libero nam ullam ipsa perspiciatis esse natus cum itaque hic
-                    commodi. Veritatis temporibus aut, maxime iure itaque fuga
-                    laborum tenetur doloribus laudantium.
+                    Kami mengembangkan aplikasi mobile yang responsif dan
+                    memiliki performa optimal di berbagai perangkat. Meliputi
+                    sistem Point of Sale (PoS), aplikasi Absensi, dan aplikasi
+                    HR, dan masih banyak yang lainnya untuk mendukung
+                    operasional yang lebih efisien dan mudah diakses kapan saja.
+                  </p>
+                </div>
+              </div>
+              <!-- Graphics Design -->
+              <div
+                class="rounded-2xl flex justify-start items-start p-5 hover:shadow-md hover:-translate-y-2 hover:scale-105 hover:border hover:border-primary transition duration-500"
+              >
+                <div class="pr-6 border-r border-primary max-[480px]:hidden">
+                  <h6
+                    class="2xl:text-[50px] lg:text-[40px] text-[35px] font-bold text-primary 2xl:w-[60px] xl:w-[60px] lg:w-[50px] w-[40px] opacity-50"
+                  >
+                    03
+                  </h6>
+                </div>
+                <div class="pl-6 border-l border-l-slate-200">
+                  <div class="flex">
+                    <img
+                      src="/src/assets/images/graphics-design.png"
+                      alt="service-1"
+                      width="50"
+                    />
+                  </div>
+                  <h4 class="text-[20px] pt-6 font-bold text-slate-800">
+                    Graphics design
+                  </h4>
+                  <p class="pt-2 text-slate-500 text-[15px] leading-[28px]">
+                    Kami menyediakan layanan desain visual yang mencakup
+                    pembuatan logo, identitas brand, materi promosi, dan desain
+                    media digital. Setiap desain dibuat dengan tampilan modern
+                    dan fresh
                   </p>
                 </div>
               </div>
@@ -367,22 +372,22 @@ function submitSendMessage() {
               v-scroll-animate="'animate-fade-up'"
               class="font-semibold text-sm uppercase text-primary mb-3"
             >
-              About Us
+              Tentang Kami
             </h4>
             <h2
               v-scroll-animate="'animate-fade-up'"
               class="mb-3 font-bold text-2xl text-slate-800"
             >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Membangun Solusi Digital Bagi Bisnis Anda
             </h2>
             <p
               v-scroll-animate="'animate-fade-up'"
               class="font-normal text-base text-slate-500"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex,
-              exercitationem laboriosam possimus illum omnis delectus blanditiis
-              officia autem non totam tempora facilis, ipsam corrupti rerum et
-              optio veritatis ut fuga.
+              IQ Muara Technology berfokus pada pengembangan solusi digital yang
+              membantu bisnis beradaptasi di era modern.Kami menyediakan layanan
+              pembuatan website, aplikasi mobile, serta desain visual yang
+              dikembangkan untuk mendukung kinerja digital bisnis anda.
             </p>
             <div
               v-scroll-animate="'animate-fade-up'"
