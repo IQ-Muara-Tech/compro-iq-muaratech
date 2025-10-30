@@ -405,9 +405,10 @@ function submitSendMessage() {
                   />
                 </div>
                 <div class="mt-3">
-                  <h1 class="text-md font-bold text-slate-800">Flexibility</h1>
+                  <h1 class="text-md font-bold text-slate-800">Inovation</h1>
                   <p class="text-[12px] max-w-40 text-slate-500 mt-1">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Selalu menghadirkan ide dan teknologi baru untuk menciptakan
+                    solusi digital yang relevan dan berdampak
                   </p>
                 </div>
               </div>
@@ -423,11 +424,31 @@ function submitSendMessage() {
                   />
                 </div>
                 <div class="mt-3">
+                  <h1 class="text-md font-bold text-slate-800">Reliability</h1>
+                  <p class="text-[12px] max-w-40 text-slate-500 mt-1">
+                    Menjaga kepercayaan klien dengan hasil kerja yang konsisten,
+                    tepat waktu, dan dapat diandalkan
+                  </p>
+                </div>
+              </div>
+              <div class="ml-5">
+                <div
+                  class="rounded-full w-18 h-18 bg-pink-100 flex items-center justify-center"
+                >
+                  <img
+                    src="/src/assets/images/collaboration.png"
+                    alt=""
+                    srcset=""
+                    width="40"
+                  />
+                </div>
+                <div class="mt-3">
                   <h1 class="text-md font-bold text-slate-800">
-                    Responsibility
+                    Collaboration
                   </h1>
                   <p class="text-[12px] max-w-40 text-slate-500 mt-1">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Membangun kerja sama yang terbuka dan produktif untuk
+                    mencapai hasil terbaik bersama
                   </p>
                 </div>
               </div>
@@ -460,7 +481,7 @@ function submitSendMessage() {
                 v-scroll-animate="'animate-fade-up'"
                 class="mb-20 font-bold text-2xl font-sans text-slate-800"
               >
-                Our <span class="text-primary">Portofolio</span>
+                <span class="text-primary">Portofolio</span> Kami
               </h2>
             </div>
 
@@ -517,7 +538,7 @@ function submitSendMessage() {
               v-scroll-animate="'animate-fade-up'"
               class="mb-5 font-bold text-2xl font-sans text-center text-slate-800"
             >
-              Frequently <span class="text-primary">Asked</span> Questions
+              Pertanyaan yang <span class="text-primary">sering</span> diajukan
             </h2>
           </div>
           <div class="w-full lg:mx-50 mx-5">
@@ -541,10 +562,7 @@ function submitSendMessage() {
                       aria-controls="accordion-collapse-body-1"
                       @click="clickAccordion1"
                     >
-                      <span
-                        >Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit?</span
-                      >
+                      <span>Berapa harga biaya pembuatan aplikasi?</span>
                       <svg
                         data-accordion-icon=""
                         class="size-4 shrink-0 transition duration-300 rotate-0 ease-in-out"
@@ -594,10 +612,7 @@ function submitSendMessage() {
                       aria-controls="accordion-collapse-body-2"
                       @click="clickAccordion2"
                     >
-                      <span
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit?</span
-                      >
+                      <span>Berapa lama pengerjaan pembuatan aplikasi?</span>
                       <svg
                         data-accordion-icon=""
                         class="size-4 shrink-0 transition duration-300 rotate-0 ease-in-out"
@@ -648,8 +663,8 @@ function submitSendMessage() {
                       @click="clickAccordion3"
                     >
                       <span
-                        >Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit?</span
+                        >Benefit apa saja yang diperoleh saat menggunakan jasa
+                        muara tech?</span
                       >
                       <svg
                         data-accordion-icon=""
@@ -703,13 +718,13 @@ function submitSendMessage() {
               v-scroll-animate="'animate-fade-up'"
               class="font-semibold text-sm uppercase text-primary mb-3"
             >
-              Contact Us
+              Hubungi Kami
             </h4>
             <h2
               v-scroll-animate="'animate-fade-up'"
               class="mb-3 font-bold text-2xl text-slate-800"
             >
-              We're open to talk to good people.
+              Kami terbuka untuk berbicara.
             </h2>
             <div
               v-scroll-animate="'animate-fade-up'"
@@ -739,7 +754,7 @@ function submitSendMessage() {
               </div>
               <div class="ml-3">
                 <p class="text-slate-500 font-base text-lg">
-                  Surabaya, Indonesia
+                  Menganti, Gresik, Jawa Timur, Indonesia
                 </p>
               </div>
             </div>
@@ -769,7 +784,7 @@ function submitSendMessage() {
               </div>
               <div class="ml-3">
                 <p class="text-slate-500 font-base text-lg">
-                  support@example.com
+                  iqmuaratech@gmail.com
                 </p>
               </div>
             </div>
@@ -798,7 +813,7 @@ function submitSendMessage() {
                 </svg>
               </div>
               <div class="ml-3">
-                <p class="text-slate-500 font-base text-lg">087338398</p>
+                <p class="text-slate-500 font-base text-lg">+6285733573927</p>
               </div>
             </div>
           </div>
