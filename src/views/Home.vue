@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const isActive = ref(false);
 const navMenu = ref(false);
@@ -60,43 +60,31 @@ const features = [
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>`,
     title: "Absensi Online GPS",
-    description: "Absensi real-time dengan validasi lokasi GPS dan selfie. Geofencing otomatis memastikan karyawan berada di lokasi yang tepat.",
-    color: "from-teal-500 to-cyan-500",
-    bgColor: "bg-teal-50",
-    iconColor: "text-teal-600",
+    description: "Absensi real-time dengan validasi lokasi GPS dan selfie. Geofencing otomatis memastikan tepat lokasi.",
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>`,
     title: "Manajemen Cuti",
-    description: "Pengajuan cuti digital dengan workflow approval multi-level, tracking saldo cuti, dan delegasi tugas otomatis.",
-    color: "from-orange-500 to-amber-500",
-    bgColor: "bg-orange-50",
-    iconColor: "text-orange-600",
+    description: "Pengajuan cuti digital dengan approval multi-level, tracking saldo, dan delegasi tugas otomatis.",
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" /></svg>`,
     title: "Reimbursement",
-    description: "Klaim pengeluaran digital dengan lampiran bukti, approval per-item, dan tracking status real-time.",
-    color: "from-blue-500 to-cyan-500",
-    bgColor: "bg-blue-50",
-    iconColor: "text-blue-600",
+    description: "Klaim pengeluaran digital dengan lampiran bukti, approval per-item, dan status real-time.",
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15a2.25 2.25 0 0 1 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" /></svg>`,
     title: "Manajemen Tugas",
-    description: "Kelola proyek dan tugas dengan Kanban board, prioritas, deadline, dan kolaborasi tim yang efektif.",
-    color: "from-teal-600 to-emerald-500",
-    bgColor: "bg-emerald-50",
-    iconColor: "text-emerald-600",
+    description: "Kelola proyek dengan Kanban board, prioritas, deadline, dan kolaborasi tim yang efektif.",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>`,
+    title: "PPDB Online",
+    description: "Penerimaan Peserta Didik Baru secara digital, dari pendaftaran, seleksi, hingga pengumuman.",
   },
 ];
 
 const upcomingFeatures = [
-  {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>`,
-    title: "PPDB Online",
-    description: "Penerimaan Peserta Didik Baru secara digital, dari pendaftaran hingga pengumuman.",
-  },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" /></svg>`,
     title: "Payment",
@@ -143,6 +131,26 @@ const stats = [
   { value: "Multi", label: "Tenant" },
   { value: "24/7", label: "Support" },
 ];
+
+const proModules = ref([
+  { id: "hr", label: "HR (Absensi, Cuti, Reimb, Tugas, Pengumuman)", price: 200000, checked: true, required: true },
+  { id: "ppdb", label: "+ PPDB & Payment", price: 100000, checked: false },
+  { id: "exam", label: "+ Ujian Online / CBT", price: 150000, checked: false },
+  { id: "siakad", label: "+ SIAKAD", price: 150000, checked: false },
+]);
+
+const proTotal = computed(() => {
+  return proModules.value.reduce((sum, m) => (m.checked ? sum + m.price : sum), 0);
+});
+
+function formatRupiah(num) {
+  return new Intl.NumberFormat("id-ID").format(num);
+}
+
+function toggleModule(id) {
+  const mod = proModules.value.find((m) => m.id === id);
+  if (mod && !mod.required) mod.checked = !mod.checked;
+}
 </script>
 
 <template>
@@ -243,7 +251,7 @@ const stats = [
           <div v-scroll-animate class="text-white">
             <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
               <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-              <span class="text-sm font-medium">Muara Technology Indonesia</span>
+              <span class="text-sm font-medium">Muara Tech Indonesia</span>
             </div>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-tight mb-6">
               Solusi Digital untuk
@@ -342,44 +350,9 @@ const stats = [
                 </div>
               </div>
 
-              <!-- Floating notification card -->
-              <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 animate-float">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-green-600">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="text-xs font-semibold text-gray-800">Absensi Berhasil</p>
-                    <p class="text-xs text-gray-500">08:00 - Tepat Waktu</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Floating location card -->
-              <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 animate-float" style="animation-delay: 1s;">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-teal-600">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="text-xs font-semibold text-gray-800">Lokasi Terverifikasi</p>
-                    <p class="text-xs text-gray-500">Dalam radius 100m</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Scroll indicator -->
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div class="scroll-indicator"></div>
       </div>
     </section>
 
@@ -399,12 +372,12 @@ const stats = [
         </div>
 
         <!-- Feature cards -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           <div
             v-for="(feature, index) in features"
             :key="index"
             v-scroll-animate
-            class="group relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-hover gradient-border"
+            class="group relative bg-white rounded-2xl p-5 shadow-sm border border-gray-100 card-hover"
           >
             <div :class="[feature.bgColor]" class="w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
               <div :class="[feature.iconColor]" v-html="feature.icon"></div>
@@ -428,7 +401,7 @@ const stats = [
               Lokaku — Platform <span class="text-gradient">Multi-Tenant</span> yang Scalable
             </h2>
             <p class="text-gray-600 leading-relaxed mb-8">
-              Dikembangkan oleh Muara Technology Indonesia, Lokaku dibangun dengan arsitektur multi-tenant yang memastikan setiap institusi memiliki ruang data terpisah dan aman. Tersedia dalam versi web admin dan mobile app.
+              Dikembangkan oleh Muara Tech Indonesia, Lokaku dibangun dengan arsitektur multi-tenant yang memastikan setiap institusi memiliki ruang data terpisah dan aman. Tersedia dalam versi web admin dan mobile app.
             </p>
 
             <div class="space-y-4">
@@ -481,98 +454,188 @@ const stats = [
 
           <!-- Right - Visual -->
           <div v-scroll-animate class="relative">
-            <div class="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-              <!-- Mobile mockup -->
-              <div class="flex justify-center gap-6">
-                <!-- Phone 1 -->
-                <div class="w-48 bg-gray-900 rounded-[2rem] p-2 shadow-xl -rotate-3">
-                  <div class="bg-white rounded-[1.5rem] overflow-hidden h-80">
-                    <div class="bg-primary p-4 text-white">
-                      <div class="h-2 w-16 bg-white/30 rounded mb-2"></div>
-                      <div class="h-3 w-24 bg-white/50 rounded"></div>
-                    </div>
-                    <div class="p-3 space-y-3">
-                      <div class="bg-teal-50 rounded-xl p-3">
-                        <div class="flex items-center gap-2 mb-2">
-                          <div class="w-6 h-6 bg-teal-200 rounded-full"></div>
-                          <div class="h-2 w-16 bg-teal-200 rounded"></div>
-                        </div>
-                        <div class="h-2 w-full bg-teal-100 rounded"></div>
-                      </div>
-                      <div class="bg-green-50 rounded-xl p-3">
-                        <div class="flex items-center gap-2 mb-2">
-                          <div class="w-6 h-6 bg-green-200 rounded-full"></div>
-                          <div class="h-2 w-20 bg-green-200 rounded"></div>
-                        </div>
-                        <div class="h-2 w-3/4 bg-green-100 rounded"></div>
-                      </div>
-                      <div class="bg-orange-50 rounded-xl p-3">
-                        <div class="flex items-center gap-2 mb-2">
-                          <div class="w-6 h-6 bg-orange-200 rounded-full"></div>
-                          <div class="h-2 w-14 bg-orange-200 rounded"></div>
-                        </div>
-                        <div class="h-2 w-2/3 bg-orange-100 rounded"></div>
-                      </div>
-                      <div class="bg-amber-50 rounded-xl p-3">
-                        <div class="flex items-center gap-2 mb-2">
-                          <div class="w-6 h-6 bg-amber-200 rounded-full"></div>
-                          <div class="h-2 w-18 bg-amber-200 rounded"></div>
-                        </div>
-                        <div class="h-2 w-4/5 bg-amber-100 rounded"></div>
-                      </div>
-                    </div>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 w-full overflow-hidden">
+              <div class="flex items-center gap-1.5 px-4 py-3 bg-gray-50 border-b border-gray-200">
+                <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                <span class="ml-2 text-xs text-gray-400">dashboard.lokaku.id</span>
+              </div>
+              <div class="p-5 space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="h-3 w-32 bg-gray-200 rounded"></div>
+                  <div class="h-6 w-6 bg-gray-200 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                  <div class="bg-teal-50 rounded-lg p-3">
+                    <div class="h-2 w-12 bg-teal-200 rounded mb-2"></div>
+                    <div class="h-4 w-8 bg-teal-300 rounded"></div>
+                  </div>
+                  <div class="bg-orange-50 rounded-lg p-3">
+                    <div class="h-2 w-12 bg-orange-200 rounded mb-2"></div>
+                    <div class="h-4 w-8 bg-orange-300 rounded"></div>
+                  </div>
+                  <div class="bg-blue-50 rounded-lg p-3">
+                    <div class="h-2 w-12 bg-blue-200 rounded mb-2"></div>
+                    <div class="h-4 w-8 bg-blue-300 rounded"></div>
                   </div>
                 </div>
-                <!-- Phone 2 -->
-                <div class="w-48 bg-gray-900 rounded-[2rem] p-2 shadow-xl rotate-3 mt-8">
-                  <div class="bg-white rounded-[1.5rem] overflow-hidden h-80">
-                    <div class="bg-gradient-to-r from-primary to-secondary p-4 text-white">
-                      <div class="h-2 w-12 bg-white/30 rounded mb-2"></div>
-                      <div class="h-4 w-20 bg-white/50 rounded"></div>
+                <div class="bg-white rounded-lg border border-gray-100 p-4">
+                  <div class="flex items-end gap-2 h-20">
+                    <div class="flex-1 bg-teal-200 rounded-t" style="height: 60%"></div>
+                    <div class="flex-1 bg-teal-400 rounded-t" style="height: 85%"></div>
+                    <div class="flex-1 bg-orange-200 rounded-t" style="height: 45%"></div>
+                    <div class="flex-1 bg-teal-300 rounded-t" style="height: 70%"></div>
+                    <div class="flex-1 bg-teal-400 rounded-t" style="height: 90%"></div>
+                    <div class="flex-1 bg-orange-300 rounded-t" style="height: 55%"></div>
+                    <div class="flex-1 bg-teal-200 rounded-t" style="height: 65%"></div>
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <div class="flex items-center gap-3 bg-gray-50 rounded-lg p-2.5">
+                    <div class="w-6 h-6 bg-teal-100 rounded-full flex items-center justify-center">
+                      <div class="w-2 h-2 bg-teal-500 rounded-full"></div>
                     </div>
-                    <div class="p-3">
-                      <!-- Map mockup -->
-                      <div class="bg-teal-50 rounded-xl h-32 relative overflow-hidden mb-3">
-                        <div class="absolute inset-0 bg-gradient-to-br from-teal-100 to-cyan-50"></div>
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                          <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center animate-pulse-glow">
-                            <div class="w-3 h-3 bg-white rounded-full"></div>
-                          </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-white rounded-lg px-2 py-1">
-                          <div class="h-2 w-12 bg-green-400 rounded"></div>
-                        </div>
-                      </div>
-                      <!-- Button mockup -->
-                      <div class="bg-primary rounded-xl p-3 text-center">
-                        <div class="h-3 w-20 bg-white/50 rounded mx-auto"></div>
-                      </div>
-                      <div class="mt-3 space-y-2">
-                        <div class="flex justify-between">
-                          <div class="h-2 w-16 bg-gray-200 rounded"></div>
-                          <div class="h-2 w-12 bg-gray-200 rounded"></div>
-                        </div>
-                        <div class="flex justify-between">
-                          <div class="h-2 w-20 bg-gray-200 rounded"></div>
-                          <div class="h-2 w-10 bg-green-200 rounded"></div>
-                        </div>
-                      </div>
+                    <div class="h-2 w-24 bg-gray-200 rounded"></div>
+                    <div class="ml-auto h-5 w-14 bg-green-100 rounded-full"></div>
+                  </div>
+                  <div class="flex items-center gap-3 bg-gray-50 rounded-lg p-2.5">
+                    <div class="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center">
+                      <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
                     </div>
+                    <div class="h-2 w-20 bg-gray-200 rounded"></div>
+                    <div class="ml-auto h-5 w-14 bg-amber-100 rounded-full"></div>
+                  </div>
+                  <div class="flex items-center gap-3 bg-gray-50 rounded-lg p-2.5">
+                    <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
+                      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    </div>
+                    <div class="h-2 w-28 bg-gray-200 rounded"></div>
+                    <div class="ml-auto h-5 w-14 bg-green-100 rounded-full"></div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <!-- Decorative elements -->
-            <div class="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl -z-10"></div>
-            <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-orange-100 to-teal-100 rounded-full -z-10"></div>
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 lg:py-28 bg-gray-light">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div v-scroll-animate class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block px-4 py-1.5 bg-primary-50 text-primary text-sm font-semibold rounded-full mb-4">Harga</span>
+          <h2 class="text-3xl md:text-4xl font-bold font-display text-dark mb-4">
+            Pilih Paket yang <span class="text-gradient">Tepat</span>
+          </h2>
+          <p class="text-gray-600 leading-relaxed">
+            Mulai dengan modul HR dan tambahkan sesuai kebutuhan institusi Anda.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <!-- Pro Card -->
+          <div v-scroll-animate class="relative">
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+              <div class="px-6 py-5 border-b border-gray-100">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="text-lg font-bold font-display text-dark">Pro</h3>
+                    <p class="text-sm text-gray-500">Untuk institusi yang sedang berkembang</p>
+                  </div>
+                  <span class="text-2xl font-bold text-primary">{{ formatRupiah(proTotal) }}<span class="text-sm font-normal text-gray-400">/bln</span></span>
+                </div>
+              </div>
+              <div class="p-6 space-y-1">
+                <div
+                  v-for="mod in proModules"
+                  :key="mod.id"
+                  class="flex items-center justify-between gap-3 py-2.5 px-3 rounded-xl"
+                  :class="{ 'bg-primary-25': mod.checked && !mod.required, 'hover:bg-gray-50': !mod.required }"
+                >
+                  <div class="flex items-center gap-3 min-w-0">
+                    <input
+                      type="checkbox"
+                      :checked="mod.checked"
+                      :disabled="mod.required"
+                      @change="toggleModule(mod.id)"
+                      class="w-4 h-4 shrink-0 rounded border-gray-300 text-primary focus:ring-primary cursor-pointer disabled:cursor-default"
+                      :class="{ 'opacity-60': mod.required }"
+                    />
+                    <span class="text-sm text-gray-800" :class="{ 'font-semibold': mod.required }">{{ mod.label }}</span>
+                  </div>
+                  <span class="text-sm font-medium text-gray-600 whitespace-nowrap ml-2">+Rp {{ formatRupiah(mod.price) }}</span>
+                </div>
+              </div>
+
+              <div class="px-6 py-4 border-t border-gray-100 bg-white">
+                <a href="#contact" class="block w-full py-3 px-6 bg-primary hover:bg-primary-dark text-white font-semibold rounded-xl text-center transition-all hover:shadow-lg">
+                  Ajukan Demo
+                </a>
+                <p class="text-xs text-gray-400 text-center mt-2">HR wajib dipilih, tambah modul lain sesuai kebutuhan</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enterprise Card -->
+          <div v-scroll-animate class="relative">
+            <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-10">
+              <span class="inline-flex items-center px-4 py-1.5 bg-primary text-white text-xs font-semibold rounded-full shadow-sm">Rekomendasi</span>
+            </div>
+            <div class="bg-white rounded-2xl shadow-md border-2 border-primary/20 overflow-hidden pt-3">
+              <div class="px-6 py-5 border-b border-gray-100">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="text-lg font-bold font-display text-dark">Enterprise</h3>
+                    <p class="text-sm text-gray-500">Untuk institusi dengan kebutuhan khusus</p>
+                  </div>
+                  <span class="text-2xl font-bold text-primary">1.000.000<span class="text-sm font-normal text-gray-400">/bln</span></span>
+                </div>
+              </div>
+              <div class="p-6">
+                <ul class="space-y-4">
+                  <li class="flex items-start gap-3">
+                    <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3 text-green-600"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    </div>
+                    <span class="text-sm text-gray-700">Semua fitur dalam paket Pro</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <div class="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3 text-blue-600"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    </div>
+                    <span class="text-sm text-gray-700">Server terisolasi (dedicated)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <div class="w-5 h-5 bg-violet-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3 text-violet-600"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    </div>
+                    <span class="text-sm text-gray-700">Custom domain</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <div class="w-5 h-5 bg-amber-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3 text-amber-600"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    </div>
+                    <span class="text-sm text-gray-700">Prioritas support</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="px-6 py-4 border-t border-gray-100 bg-gray-50">
+                <a href="#contact" class="block w-full py-3 px-6 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-xl text-center transition-all hover:shadow-lg">
+                  Ajukan Demo
+                </a>
+                <p class="text-xs text-gray-400 text-center mt-2">Harga tetap untuk semua fitur</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- How It Works -->
-    <section class="py-20 lg:py-28 bg-white">
+    <section class="py-20 lg:py-28 bg-gray-light">
       <div class="container mx-auto px-4 lg:px-8">
         <div v-scroll-animate class="text-center max-w-2xl mx-auto mb-16">
           <span class="inline-block px-4 py-1.5 bg-secondary-50 text-secondary-600 text-sm font-semibold rounded-full mb-4">Cara Kerja</span>
@@ -631,7 +694,7 @@ const stats = [
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <div
             v-for="(item, index) in upcomingFeatures"
             :key="index"
@@ -724,7 +787,7 @@ const stats = [
             Siap Transformasi Digital Institusi Anda?
           </h2>
           <p class="text-lg text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Hubungi Muara Technology Indonesia dan mulai gunakan Lokaku untuk mengelola operasional institusi Anda secara efisien.
+            Hubungi Muara Tech Indonesia dan mulai gunakan Lokaku untuk mengelola operasional institusi Anda secara efisien.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all hover:shadow-xl hover:-translate-y-0.5 text-lg">
@@ -850,7 +913,7 @@ const stats = [
         <!-- Bottom -->
         <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p class="text-sm text-gray-400">
-            &copy; {{ currentYear }} Muara Technology Indonesia. All rights reserved.
+            &copy; {{ currentYear }} Muara Tech Indonesia. All rights reserved.
           </p>
           <p class="text-sm text-gray-500">
             Dibuat dengan dedikasi untuk pendidikan Indonesia.

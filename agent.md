@@ -12,9 +12,11 @@ Dokumentasi lengkap seluruh project yang terkait dengan ekosistem Muara Tech Ind
 | Brand | MuaraTech |
 | Domain Project | iq-muaratech |
 | Bidang | Software Development (Web, Mobile, Graphics Design) |
-| Primary Color | #315BA6 (Biru) |
-| Secondary Color | #5dc3e4 (Biru muda) |
-| Font | Montserrat |
+| Primary Color | #109594 (Teal) |
+| Secondary Color | #ff6a00 (Orange) |
+| Accent Color | #1a6ccc (Blue) |
+| Font | Inter / Plus Jakarta Sans |
+| Domain | muaratech.com |
 
 ---
 
@@ -994,27 +996,26 @@ flutter build ios         # Build iOS
 
 ## Changelog
 
-### [2026-05-08] Redesign Company Profile -> Lokaku SaaS Landing Page
-- **index.html**: Ditambahkan SEO lengkap (meta tags, Open Graph, Twitter Card, JSON-LD structured data)
-- **style.css**: Redesign total - new color scheme (blue/cyan/violet), Inter + Plus Jakarta Sans fonts, gradient backgrounds, glass morphism, modern animations (fade-up, slide, float, pulse-glow, gradient-shift), grid/dot patterns
-- **Home.vue**: Redesign total menjadi landing page produk Lokaku:
-  - Hero section dengan dashboard mockup dan floating notification cards
-  - Features section (4 fitur utama: Absensi GPS, Cuti, Reimbursement, Task Management)
-  - Product section dengan mobile app mockup
-  - How It Works (3 langkah)
-  - Roadmap section (fitur coming soon: PPDB, Payment, Sistem Akademik, CBT)
-  - FAQ accordion
-  - CTA section dengan gradient animasi
-  - Contact section
-  - Footer modern dengan social links
-- **tailwind.config.js**: Updated color palette dan font families
+### [2026-05-08] Major Redesign - Modern Minimalist + Pricing Section
+- **style.css**: Simplify total - hapus styles tidak dipakai (gradient-border, glass morphism, heavy patterns, floating cards assets, text-gradient-purple/accent, scroll-indicator). Pertahankan yang esensial saja.
+- **Home.vue**:
+  - **Hero**: Simplify - floating cards dihapus, scroll indicator dihapus, background lebih clean
+  - **Features**: Tambah fitur PPDB Online sebagai fitur ke-5. Grid diubah dari 4 kolom jadi responsif (sm:2, lg:3, xl:5)
+  - **Product mockup**: Diperbaiki responsifnya - phone sizes dikurangi, max-width dibatasi, scaling lebih baik di mobile
+  - **Pricing (NEW)**: 2 kartu harga (Pro + Enterprise) dengan interactive checkbox:
+    - **Pro**: HR wajib (disabled), modular checkbox untuk PPDB, CBT, SIAKAD dengan harga real-time via Vue computed
+    - **Enterprise**: Semua fitur Pro + server terisolasi + custom domain, Rp 1.000.000/bln
+  - **Roadmap**: PPDB dipindah ke features (sudah launch). Grid diubah ke 3 kolom
+- **Semua "Muara Technology Indonesia"** -> **"Muara Tech Indonesia"** (4 tempat)
 
-### Positioning Produk
+### Positioning Produk & Harga
 - **Nama Produk**: Lokaku
 - **Tipe**: SaaS (Software as a Service)
 - **Target Market**: Sekolah & Institusi Pendidikan
-- **Fitur Saat Ini**: Absensi GPS, Manajemen Cuti, Reimbursement, Manajemen Tugas
-- **Fitur Roadmap**: PPDB Online, Payment Gateway (SPP, registrasi), Sistem Akademik, Ujian Online/CBT
+- **Fitur Saat Ini**: Absensi GPS, Cuti, Reimbursement, Tugas, **PPDB Online** (5 fitur)
+- **Fitur Roadmap**: Payment, Sistem Akademik, Ujian Online/CBT
+- **Harga Pro**: HR (200rb) + PPDB (+100rb) + CBT (+150rb) + SIAKAD (+150rb) = maks 600rb/bln
+- **Harga Enterprise**: 1.000.000/bln (semua fitur + server terisolasi + custom domain)
 
 ---
 
@@ -1037,3 +1038,5 @@ flutter build ios         # Build iOS
 - [2026-05-08] Modern CSS techniques (glass morphism, gradient borders, CSS animations)
 - [2026-05-08] Tailwind CSS v4 theming (@theme directive, custom keyframes)
 - [2026-05-08] SaaS landing page design patterns
+- [2026-05-08] Vue reactive pricing calculator (computed + ref dengan interactive UI)
+- [2026-05-08] Modern minimalist design principles (white space, clean cards, reduce decorative noise)
