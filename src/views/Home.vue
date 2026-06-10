@@ -8,7 +8,7 @@ const isScrolled = ref(false);
 const activeSection = ref("home");
 const currentYear = new Date().getFullYear();
 
-const sections = ["home", "features", "product", "roadmap", "faq", "contact"];
+const sections = ["home", "about", "features", "product", "roadmap", "faq", "contact"];
 
 function toggleMenu() {
   isActive.value = !isActive.value;
@@ -102,6 +102,25 @@ const upcomingFeatures = [
   },
 ];
 
+const aboutMisi = [
+  {
+    title: "Digitalisasi Administrasi Terpadu",
+    description: "Menyediakan solusi teknologi berbasis SaaS yang komprehensif untuk menyederhanakan alur kerja manual sekolah — mulai dari manajemen kepegawaian, penerimaan peserta didik baru, hingga tata kelola keuangan.",
+  },
+  {
+    title: "Optimalisasi Produktivitas Pendidik",
+    description: "Memangkas beban kerja administratif tata usaha dan guru melalui otomatisasi sistem, sehingga institusi dapat memfokuskan energi secara penuh pada peningkatan kualitas pembelajaran siswa.",
+  },
+  {
+    title: "Infrastruktur Andal dan Terukur",
+    description: "Menghadirkan teknologi peladen yang tangguh, aman, dan fleksibel, yang dirancang khusus untuk memenuhi standar privasi dan kapabilitas data dari berbagai skala institusi pendidikan.",
+  },
+  {
+    title: "Kemitraan Strategis Berkelanjutan",
+    description: "Menjalin sinergi jangka panjang dengan mitra pendidikan melalui pendampingan teknologi, evaluasi sistem rutin, dan pembaruan fitur yang berkesinambungan demi memastikan adopsi digital berjalan tanpa hambatan.",
+  },
+];
+
 const faqs = [
   {
     question: "Apa itu Lokaku?",
@@ -192,6 +211,13 @@ function toggleModule(id) {
                 ]">Beranda</a>
               </li>
               <li>
+                <a href="#about" @click="closeMenu" class="block py-2 px-4 text-sm font-medium rounded-lg transition-colors" :class="[
+                  isScrolled
+                    ? activeSection === 'about' ? 'text-primary font-semibold' : 'text-gray-700 hover:text-primary hover:bg-primary-25 lg:hover:bg-transparent'
+                    : activeSection === 'about' ? 'text-white font-semibold' : 'text-white/70 hover:text-white lg:hover:bg-white/10'
+                ]">Tentang Kami</a>
+              </li>
+              <li>
                 <a href="#features" @click="closeMenu" class="block py-2 px-4 text-sm font-medium rounded-lg transition-colors" :class="[
                   isScrolled
                     ? activeSection === 'features' ? 'text-primary font-semibold' : 'text-gray-700 hover:text-primary hover:bg-primary-25 lg:hover:bg-transparent'
@@ -251,7 +277,7 @@ function toggleModule(id) {
           <div v-scroll-animate class="text-white">
             <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
               <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-              <span class="text-sm font-medium">Muara Tech Indonesia</span>
+              <span class="text-sm font-medium">Muara Technology Indonesia</span>
             </div>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-tight mb-6">
               Solusi Digital untuk
@@ -356,6 +382,51 @@ function toggleModule(id) {
       </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-20 lg:py-28 bg-white relative">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <!-- Left: Visi -->
+          <div v-scroll-animate>
+            <span class="inline-block px-4 py-1.5 bg-primary-50 text-primary text-sm font-semibold rounded-full mb-4">Tentang Kami</span>
+            <h2 class="text-3xl md:text-4xl font-bold font-display text-dark mb-6">
+              Transformasi Digital <span class="text-gradient">Pendidikan Indonesia</span>
+            </h2>
+            <p class="text-gray-600 leading-relaxed mb-8">
+              Muara Tech Indonesia hadir sebagai katalisator transformasi digital di sektor pendidikan. Kami membangun solusi SaaS yang komprehensif untuk menyederhanakan operasional sekolah — dari manajemen kepegawaian, penerimaan peserta didik baru, hingga tata kelola keuangan — agar pendidik dapat fokus pada yang paling penting: kualitas pembelajaran siswa.
+            </p>
+
+            <!-- Visi Card -->
+            <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 border border-primary-100 relative">
+              <svg class="absolute top-4 left-4 w-8 h-8 text-primary/20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <h3 class="text-lg font-bold text-dark mb-3 font-display pl-8">Visi</h3>
+              <p class="text-gray-700 leading-relaxed italic pl-8">
+                "Menjadi katalisator transformasi digital pendidikan terdepan yang mewujudkan ekosistem sekolah yang efisien, transparan, dan terintegrasi."
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Misi -->
+          <div v-scroll-animate>
+            <h3 class="text-xl font-bold text-dark mb-6 font-display">Misi Kami</h3>
+            <div class="space-y-5">
+              <div v-for="(item, index) in aboutMisi" :key="index" class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center text-white font-bold text-sm">
+                  {{ index + 1 }}
+                </div>
+                <div>
+                  <h4 class="font-bold text-dark mb-1">{{ item.title }}</h4>
+                  <p class="text-sm text-gray-600 leading-relaxed">{{ item.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Features Section -->
     <section id="features" class="py-20 lg:py-28 bg-white relative">
       <div class="absolute inset-0 bg-dot-pattern"></div>
@@ -398,7 +469,7 @@ function toggleModule(id) {
           <div v-scroll-animate>
             <span class="inline-block px-4 py-1.5 bg-primary-50 text-primary text-sm font-semibold rounded-full mb-4">Produk Kami</span>
             <h2 class="text-3xl md:text-4xl font-bold font-display text-dark mb-6">
-              Lokaku — Platform <span class="text-gradient">Multi-Tenant</span> yang Scalable
+              MuaraTech — Platform <span class="text-gradient">Multi-Tenant</span> yang Scalable
             </h2>
             <p class="text-gray-600 leading-relaxed mb-8">
               Dikembangkan oleh Muara Tech Indonesia, Lokaku dibangun dengan arsitektur multi-tenant yang memastikan setiap institusi memiliki ruang data terpisah dan aman. Tersedia dalam versi web admin dan mobile app.
@@ -796,7 +867,7 @@ function toggleModule(id) {
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
               </svg>
             </a>
-            <a href="https://wa.me/6281234567890" target="_blank" class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-all text-lg">
+            <a href="https://wa.me/6285124015258" target="_blank" class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-all text-lg">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 0 0 .917.918l4.462-1.494A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.34 0-4.512-.664-6.36-1.813l-.444-.267-3.07 1.027 1.027-3.069-.267-.444A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
@@ -840,7 +911,7 @@ function toggleModule(id) {
               </svg>
             </div>
             <h3 class="font-bold text-dark mb-2">WhatsApp</h3>
-            <a href="https://wa.me/6285733573927" target="_blank" class="text-sm text-gray-600 hover:text-green-600 transition-colors">+62 857-3357-3927</a>
+            <a href="https://wa.me/6285124015258" target="_blank" class="text-sm text-gray-600 hover:text-green-600 transition-colors">+62 851-2401-5258</a>
           </div>
 
           <div v-scroll-animate class="bg-gray-light rounded-2xl p-6 text-center card-hover border border-gray-100">
@@ -867,7 +938,7 @@ function toggleModule(id) {
               <span class="text-xl font-bold font-display">Muara<span class="text-primary-300">Tech</span></span>
             </div>
             <p class="text-gray-400 text-sm leading-relaxed max-w-sm mb-6">
-              Perusahaan teknologi yang berfokus pada pengembangan solusi digital untuk institusi pendidikan melalui produk unggulan kami, Lokaku.
+              MuaraTech hadir sebagai solusi digital untuk institusi pendidikan melalui produk unggulan kami, Lokaku.
             </p>
             <div class="flex items-center gap-3">
               <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
@@ -900,9 +971,9 @@ function toggleModule(id) {
           </div>
 
           <div>
-            <h4 class="font-bold font-display mb-4">Perusahaan</h4>
+            <h4 class="font-bold font-display mb-4">MuaraTech</h4>
             <ul class="space-y-3">
-              <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Tentang Kami</a></li>
+              <li><a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors">Tentang Kami</a></li>
               <li><a href="#contact" class="text-sm text-gray-400 hover:text-white transition-colors">Kontak</a></li>
               <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Kebijakan Privasi</a></li>
               <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Syarat & Ketentuan</a></li>
@@ -913,7 +984,7 @@ function toggleModule(id) {
         <!-- Bottom -->
         <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p class="text-sm text-gray-400">
-            &copy; {{ currentYear }} Muara Tech Indonesia. All rights reserved.
+            &copy; {{ currentYear }} Muara Technology Indonesia. All rights reserved.
           </p>
           <p class="text-sm text-gray-500">
             Dibuat dengan dedikasi untuk pendidikan Indonesia.
