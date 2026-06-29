@@ -668,7 +668,7 @@ function toggleModule(id) {
                 </template>
                 <template v-else>
                   <span class="text-sm text-gray-600">{{ f.label }}</span>
-                  <span class="inline-flex items-center px-1.5 py-0.5 bg-amber-50 text-amber-600 text-[10px] font-semibold rounded">Segera Hadir</span>
+                  <span class="inline-flex items-center px-1.5 py-0.5 bg-amber-50 text-amber-600 text-[10px] font-semibold rounded">Coming Soon</span>
                 </template>
               </div>
             </div>
