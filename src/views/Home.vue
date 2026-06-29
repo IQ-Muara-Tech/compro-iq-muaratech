@@ -82,18 +82,18 @@ const features = [
     title: "PPDB Online",
     description: "Penerimaan Peserta Didik Baru secara digital, dari pendaftaran, seleksi, hingga pengumuman.",
   },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" /></svg>`,
+    title: "Pembayaran Digital",
+    description: "Semua yang Anda Butuhkan dalam Satu Platform\nLokaku menyediakan fitur lengkap untuk mengelola operasional institusi Anda secara efisien dan modern.",
+  },
 ];
 
 const upcomingFeatures = [
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" /></svg>`,
-    title: "Payment",
-    description: "Pembayaran registrasi, SPP, dan biaya lainnya terintegrasi dengan berbagai metode pembayaran.",
-  },
-  {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>`,
-    title: "Sistem Akademik",
-    description: "Manajemen kurikulum, jadwal pelajaran, nilai, rapor, dan data akademik lengkap.",
+    title: "Penilaian Siswa",
+    description: "Input nilai, rapor digital, analisis capaian siswa, dan laporan akademik lengkap.",
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" /></svg>`,
@@ -152,11 +152,39 @@ const stats = [
 ];
 
 const proModules = ref([
-  { id: "hr", label: "HR (Absensi, Cuti, Reimb, Tugas, Pengumuman)", price: 200000, checked: true, required: true },
-  { id: "ppdb", label: "+ PPDB & Payment", price: 100000, checked: false },
+  { id: "hr", label: "HR (Absensi, Cuti, Reimb, Tugas, Pengumuman)", price: 150000, checked: true, required: true },
+  { id: "siakad", label: "+ SIAKAD (PPDB, Pembayaran, Penilaian)", price: 200000, checked: false },
   { id: "exam", label: "+ Ujian Online / CBT", price: 150000, checked: false },
-  { id: "siakad", label: "+ SIAKAD", price: 150000, checked: false },
 ]);
+
+const moduleDetails = {
+  hr: [
+    "Manajemen Absensi",
+    "Manajemen Cuti & Approval",
+    "Reimbursement",
+    "Manajemen Tugas",
+    "Pengumuman",
+    "Dashboard HR",
+  ],
+  siakad: [
+    "PPDB Online",
+    "Inden / Waiting List",
+    "Daftar Ulang",
+    "Kenaikan Kelas",
+    "Pembayaran Tagihan (SPP, billing)",
+    "Manajemen Tahun Ajaran",
+    { label: "Penilaian Siswa", upcoming: true },
+    "WA Gateway — Notifikasi PPDB, daftar ulang, kenaikan kelas",
+    "Dashboard SIAKAD",
+  ],
+  exam: [
+    { label: "Ujian Online / CBT", upcoming: true },
+    "Bank Soal & Kategori",
+    "Jadwal Ujian",
+    "Analisis Hasil",
+    "Try Out",
+  ],
+};
 
 const proTotal = computed(() => {
   return proModules.value.reduce((sum, m) => (m.checked ? sum + m.price : sum), 0);
@@ -443,7 +471,7 @@ function toggleModule(id) {
         </div>
 
         <!-- Feature cards -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <div
             v-for="(feature, index) in features"
             :key="index"
@@ -454,7 +482,7 @@ function toggleModule(id) {
               <div :class="[feature.iconColor]" v-html="feature.icon"></div>
             </div>
             <h3 class="text-lg font-bold text-dark mb-3 font-display">{{ feature.title }}</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">{{ feature.description }}</p>
+            <p class="text-sm text-gray-600 leading-relaxed" style="white-space: pre-line">{{ feature.description }}</p>
           </div>
         </div>
       </div>
@@ -585,6 +613,88 @@ function toggleModule(id) {
                     <div class="ml-auto h-5 w-14 bg-green-100 rounded-full"></div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricelist Section -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div v-scroll-animate class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block px-4 py-1.5 bg-primary-50 text-primary text-sm font-semibold rounded-full mb-4">Pricelist</span>
+          <h2 class="text-3xl md:text-4xl font-bold font-display text-dark mb-4">
+            Harga Modul <span class="text-gradient">Lokaku</span>
+          </h2>
+          <p class="text-gray-600 leading-relaxed">
+            Pilih modul yang dibutuhkan, kombinasikan sesuai kebutuhan institusi Anda.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <!-- HR Card -->
+          <div v-scroll-animate class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="px-6 pt-6 pb-4 border-b border-gray-100">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg font-bold font-display text-dark">HR</h3>
+                <span class="text-xl font-bold text-primary">150<span class="text-sm font-normal text-gray-400">rb/bln</span></span>
+              </div>
+              <p class="text-sm text-gray-500">Manajemen SDM & operasional harian</p>
+            </div>
+            <div class="px-6 py-4 space-y-2.5">
+              <div v-for="(f, i) in moduleDetails.hr" :key="i" class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                <span class="text-sm text-gray-600">{{ f }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SIAKAD Card -->
+          <div v-scroll-animate class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden relative">
+            <div class="px-6 pt-6 pb-4 border-b border-gray-100">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg font-bold font-display text-dark">SIAKAD</h3>
+                <span class="text-xl font-bold text-primary">200<span class="text-sm font-normal text-gray-400">rb/bln</span></span>
+              </div>
+              <p class="text-sm text-gray-500">Sistem akademik & administrasi siswa</p>
+            </div>
+            <div class="px-6 py-4 space-y-2.5">
+              <div v-for="(f, i) in moduleDetails.siakad" :key="i" class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                <template v-if="typeof f === 'string'">
+                  <span class="text-sm text-gray-600">{{ f }}</span>
+                </template>
+                <template v-else>
+                  <span class="text-sm text-gray-600">{{ f.label }}</span>
+                  <span class="inline-flex items-center px-1.5 py-0.5 bg-amber-50 text-amber-600 text-[10px] font-semibold rounded">Segera Hadir</span>
+                </template>
+              </div>
+            </div>
+          </div>
+
+          <!-- CBT Card -->
+          <div v-scroll-animate class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden relative opacity-75">
+            <div class="absolute top-3 right-3 z-10">
+              <span class="inline-flex items-center px-2 py-1 bg-amber-50 text-amber-600 text-[10px] font-semibold rounded-full">Coming Soon</span>
+            </div>
+            <div class="px-6 pt-6 pb-4 border-b border-gray-100">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg font-bold font-display text-dark">Ujian Online / CBT</h3>
+                <span class="text-xl font-bold text-gray-400">150<span class="text-sm font-normal text-gray-300">rb/bln</span></span>
+              </div>
+              <p class="text-sm text-gray-500">Computer Based Test & manajemen ujian</p>
+            </div>
+            <div class="px-6 py-4 space-y-2.5">
+              <div v-for="(f, i) in moduleDetails.exam" :key="i" class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-gray-300 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                <template v-if="typeof f === 'string'">
+                  <span class="text-sm text-gray-400">{{ f }}</span>
+                </template>
+                <template v-else>
+                  <span class="text-sm text-gray-400">{{ f.label }}</span>
+                </template>
               </div>
             </div>
           </div>
@@ -765,7 +875,7 @@ function toggleModule(id) {
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           <div
             v-for="(item, index) in upcomingFeatures"
             :key="index"
