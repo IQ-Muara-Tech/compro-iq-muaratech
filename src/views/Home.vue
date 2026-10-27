@@ -174,7 +174,6 @@ const moduleDetails = {
     "Pembayaran Tagihan (SPP, billing)",
     "Manajemen Tahun Ajaran",
     { label: "Penilaian Siswa", upcoming: true },
-    "WA Gateway — Notifikasi PPDB, daftar ulang, kenaikan kelas",
     "Dashboard SIAKAD",
   ],
   exam: [
