@@ -1003,18 +1003,18 @@ flutter build ios         # Build iOS
   - **Features**: Tambah fitur PPDB Online sebagai fitur ke-5. Grid diubah dari 4 kolom jadi responsif (sm:2, lg:3, xl:5)
   - **Product mockup**: Diperbaiki responsifnya - phone sizes dikurangi, max-width dibatasi, scaling lebih baik di mobile
   - **Pricing (NEW)**: 2 kartu harga (Pro + Enterprise) dengan interactive checkbox:
-    - **Pro**: HR wajib (disabled), modular checkbox untuk PPDB, CBT, SIAKAD dengan harga real-time via Vue computed
+    - **Pro**: HR wajib (disabled), modular checkbox untuk PPDB & Pembayaran, LMS (Ruang Belajar), CBT dengan harga real-time via Vue computed
     - **Enterprise**: Semua fitur Pro + server terisolasi + custom domain, Rp 1.000.000/bln
-  - **Roadmap**: PPDB dipindah ke features (sudah launch). Grid diubah ke 3 kolom
+  - **Roadmap**: PPDB & Pembayaran serta LMS (sudah launch). Grid diubah ke 3 kolom
 - **Semua "Muara Technology Indonesia"** -> **"Muara Tech Indonesia"** (4 tempat)
 
 ### Positioning Produk & Harga
 - **Nama Produk**: Lokaku
 - **Tipe**: SaaS (Software as a Service)
 - **Target Market**: Sekolah & Institusi Pendidikan
-- **Fitur Saat Ini**: Absensi GPS, Cuti, Reimbursement, Tugas, **PPDB Online** (5 fitur)
-- **Fitur Roadmap**: Payment, Sistem Akademik, Ujian Online/CBT
-- **Harga Pro**: HR (200rb) + PPDB (+100rb) + CBT (+150rb) + SIAKAD (+150rb) = maks 600rb/bln
+- **Fitur Saat Ini**: Absensi GPS, Cuti, Reimbursement, Tugas, **PPDB & Pembayaran**, **LMS (Ruang Belajar)**
+- **Fitur Roadmap**: Ujian Online / CBT Terpisah
+- **Harga Pro**: HR (150rb) + PPDB & Pembayaran (+150rb) + LMS (+150rb) + CBT (+150rb) = maks 600rb/bln
 - **Harga Enterprise**: 1.000.000/bln (semua fitur + server terisolasi + custom domain)
 
 ---

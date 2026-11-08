@@ -36,19 +36,27 @@ const features = [
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>`,
-    title: "PPDB Online",
+    title: "PPDB & Inden Siswa",
     description:
-      "Penerimaan Peserta Didik Baru secara digital, dari pendaftaran, seleksi, hingga pengumuman.",
+      "Alur penerimaan siswa baru dari inden booking kursi, pendaftaran formulir online, verifikasi berkas, hingga generate data siswa otomatis.",
     bgColor: "bg-emerald-50",
     iconColor: "text-emerald-600",
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" /></svg>`,
-    title: "Pembayaran Digital",
+    title: "Pembayaran & Angsuran",
     description:
-      "Terima pembayaran SPP, tagihan, dan billing secara digital dengan rekonsilisi otomatis dan laporan real-time.",
+      "Kelola tagihan daftar ulang dan SPP siswa dengan opsi angsuran bertahap, upload bukti transfer, approval admin, dan rekap keuangan real-time.",
     bgColor: "bg-sky-50",
     iconColor: "text-sky-600",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>`,
+    title: "LMS & Ruang Belajar",
+    description:
+      "Ruang kelas digital dengan materi multimedia S3, pengumpulan tugas & revisi mandiri siswa, penilaian skor KKM, dan forum diskusi interaktif.",
+    bgColor: "bg-indigo-50",
+    iconColor: "text-indigo-600",
   },
 ];
 </script>

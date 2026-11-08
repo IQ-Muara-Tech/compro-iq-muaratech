@@ -3,48 +3,71 @@ import SectionHeading from "@/components/ui/SectionHeading.vue";
 
 const moduleDetails = {
   hr: [
-    "Manajemen Absensi",
-    "Manajemen Cuti & Approval",
-    "Reimbursement",
-    "Manajemen Tugas",
-    "Pengumuman",
-    "Dashboard HR",
+    "Presensi Online GPS & Geofencing",
+    "Manajemen Cuti & Approval Multi-level",
+    "Klaim Reimbursement Digital",
+    "Manajemen Tugas & Proyek Kanban",
+    "Broadcast Pengumuman Internal",
+    "Dashboard Ringkasan HR",
   ],
-  siakad: [
-    "PPDB Online",
-    "Inden / Waiting List",
-    "Daftar Ulang",
-    "Kenaikan Kelas",
-    "Pembayaran Tagihan (SPP, billing)",
-    "Manajemen Tahun Ajaran",
-    { label: "Penilaian Siswa", upcoming: true },
-    "Dashboard SIAKAD",
+  ppdb: [
+    "Inden & Booking Kursi Siswa Baru",
+    "Formulir PPDB Online & Cetak PDF",
+    "Verifikasi Berkas Calon Siswa (Admin)",
+    "Portal Tagihan & Daftar Ulang Siswa",
+    "Skema Angsuran / Pembayaran Bertahap",
+    "Upload Bukti Bayar & Konfirmasi Status",
+    "Approval Pembayaran & Mutasi (Admin)",
+    "Generate Otomatis Akun Siswa Baru",
+    "Rekapitulasi Keuangan & Laporan PPDB",
+  ],
+  lms: [
+    "Ruang Belajar Dinamis (Room LMS)",
+    "Kode Join Room Instan untuk Siswa",
+    "Topik & Bab Materi Multimedia",
+    "Embed Video (YouTube/Drive) & Cloud S3",
+    "Tracking Baca Siswa (View Counter)",
+    "Tugas & Soal (Passing Score/KKM, Deadline)",
+    "Pengumpulan Tugas Teks, Link & File",
+    "Hapus File Lampiran Mandiri (Revisi & Edit)",
+    "Penilaian Skor (0-100) & Return for Revision",
+    "Forum Diskusi Interaktif & Thread Balasan",
+    "Rekap Nilai Tugas & Ketuntasan Siswa",
   ],
   exam: [
     { label: "Ujian Online / CBT", upcoming: true },
-    "Bank Soal & Kategori",
-    "Jadwal Ujian",
-    "Analisis Hasil",
-    "Try Out",
+    "Bank Soal & Kategori Mapel",
+    "Jadwal Ujian & Token Akses",
+    "Timer & Acak Soal / Opsi",
+    "Analisis Butir & Koreksi Otomatis",
   ],
 };
 
 const modules = [
   {
     key: "hr",
-    name: "HR",
+    name: "HR & Operasional",
     price: "150",
-    description: "Manajemen SDM & operasional harian",
+    description: "Manajemen SDM, absensi GPS & operasional institusi",
     features: moduleDetails.hr,
     muted: false,
     comingSoon: false,
   },
   {
-    key: "siakad",
-    name: "SIAKAD",
-    price: "200",
-    description: "Sistem akademik & administrasi siswa",
-    features: moduleDetails.siakad,
+    key: "ppdb",
+    name: "PPDB & Pembayaran",
+    price: "150",
+    description: "Inden, formulir online, angsuran biaya & approval pembayaran",
+    features: moduleDetails.ppdb,
+    muted: false,
+    comingSoon: false,
+  },
+  {
+    key: "lms",
+    name: "LMS (Ruang Belajar)",
+    price: "150",
+    description: "Materi multimedia, tugas, revisi mandiri, grading & diskusi",
+    features: moduleDetails.lms,
     muted: false,
     comingSoon: false,
   },
@@ -52,7 +75,7 @@ const modules = [
     key: "exam",
     name: "Ujian Online / CBT",
     price: "150",
-    description: "Computer Based Test & manajemen ujian",
+    description: "Computer Based Test & manajemen evaluasi terpisah",
     features: moduleDetails.exam,
     muted: true,
     comingSoon: true,
@@ -70,7 +93,7 @@ const modules = [
         <template #title> Harga Modul <span class="text-gradient">Lokaku</span> </template>
       </SectionHeading>
 
-      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
         <div
           v-for="mod in modules"
           :key="mod.key"

@@ -5,13 +5,29 @@ import SectionHeading from "@/components/ui/SectionHeading.vue";
 const proModules = ref([
   {
     id: "hr",
-    label: "HR (Absensi, Cuti, Reimb, Tugas, Pengumuman)",
+    label: "HR (Absensi GPS, Cuti, Reimb, Tugas, Pengumuman)",
     price: 150000,
     checked: true,
     required: true,
   },
-  { id: "siakad", label: "+ SIAKAD (PPDB, Pembayaran, Penilaian)", price: 200000, checked: false },
-  { id: "exam", label: "+ Ujian Online / CBT", price: 150000, checked: false },
+  {
+    id: "ppdb",
+    label: "+ PPDB & Pembayaran (Inden, Formulir, Angsuran, Approval)",
+    price: 150000,
+    checked: false,
+  },
+  {
+    id: "lms",
+    label: "+ LMS (Ruang Kelas, Materi S3, Tugas & Grading, Diskusi)",
+    price: 150000,
+    checked: false,
+  },
+  {
+    id: "exam",
+    label: "+ Ujian Online / CBT (Bank Soal, Jadwal & Koreksi)",
+    price: 150000,
+    checked: false,
+  },
 ]);
 
 const enterpriseBenefits = [
